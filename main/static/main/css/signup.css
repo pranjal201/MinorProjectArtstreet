@@ -1,0 +1,87 @@
+body, html {
+  height: 100%;
+}
+body{
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('../images/login_background2.png');
+	height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+   background-attachment: fixed;
+}
+
+@font-face {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: normal;
+    font-style: normal;
+
+}
+	
+.signup_form button
+{
+    -webkit-animation: rainbow 8s ease infinite;
+    animation: rainbow 8s ease infinite;
+    color: white;
+    background-image: linear-gradient(124deg, #ff470f, #ff3860, #b86bff, #3273dc);
+    background-size: 800% 800%
+}
+
+@-webkit-keyframes rainbow {
+    0% {
+        background-position: 1% 80%
+    }
+    50% {
+        background-position: 99% 20%
+    }
+    100% {
+        background-position: 1% 80%
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 1% 80%
+    }
+    50% {
+        background-position: 99% 20%
+    }
+    100% {
+        background-position: 1% 80%
+    }
+}
+.subtitle
+{
+	color: violet; 
+	border-bottom: 1px solid violet;
+	text-align: left;
+}
+h2{
+	margin: 0;
+	padding: 0;
+	color: violet;
+	letter-spacing: 1px;
+}
+
+.signup_form button:hover{
+	background-color: violet;
+	border:1px solid violet;
+	color: #ffffff;
+}
+
+.card{
+	background-color: rgba(237, 222, 250, 0.2);
+}
+.signup_form small{
+	float: right;
+	margin-top: 20px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.signup_form small a{
+	color: lime;
+	font-weight: bold;
+}

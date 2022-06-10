@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Art Street</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+</style>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+
+    
+
+    <section class="container">
+
+        <div class="content">
+
+        <a href="#">
+<div id="mouse-scroll">
+  <div class="mouse">
+    <div class="mouse-in"></div>
+  </div>
+  <div class="arrows">
+      <span class="down-arrow-1"></span>
+      <span class="down-arrow-2"></span>
+      <span class="down-arrow-3"></span>
+      <h2 style="font-family: font-family: 'sans-serif';">scroll down</h2>
+   </div>
+</div>
+</a>
+            <p>Art Street</p>  
+            <a href="{% url 'home' %}" style="text-decoration: none;"><span style="position: relative;left: 40%;font-weight: bold;top: -230px; font-size: 2rem;
+  bottom: 100px;
+  text-align: center;
+  color: #fcedd9;
+    height:20vh;
+      line-height: 10vh;
+  font-family: 'Niconne', cursive;
+  text-shadow: 1px 1px 0px #eb452b, 
+                  1px 1px 0px #efa032, 
+                  2px 2px 0px #46b59b, 
+                  3px 3px 0px #017e7f, 
+                  4px 4px 0px #052939, 
+                  5px 5px 0px #c11a2b, 
+                  6px 6px 0px #c11a2b, 
+                  7px 7px 0px #c11a2b, 
+                  8px 8px 0px #c11a2b;">skip to website</span></a>
+        </div>
+
+
+    </section>
+
+    <section class="container">
+        <div class="content">
+     <!--  <h1>Step 2</h1> -->
+       
+        </div>
+
+    </section>
+
+    <section class="container">
+        <div class="content">
+          <!--   <h1>Step 3</h1>
+            <p>Start it like this..</p> -->
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="content">
+         <!--    <h1>Step 4</h1>
+            <p>Start it like this..</p> -->
+        </div>
+    </section>
+
+    <div id="set-height"></div>
+
+    <video id="v0" tabindex="0", autobuffer preload>
+        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="{{media}}/output.mp4"></source>
+    </video>
+   
+    <script>
+
+   
+        var frameNumber = 5, // start video at frame 0
+        // lower numbers = faster playback
+        playbackConst = 500, 
+        // get page height from video duration
+        setHeight = document.getElementById("set-height"), 
+        // select video element         
+        vid = document.getElementById('v0'); 
+        // var vid = $('#v0')[0]; // jquery option
+
+    // dynamically set the page height according to video length
+    vid.addEventListener('loadedmetadata', function() {
+    setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+    });
+
+
+    // Use requestAnimationFrame for smooth playback
+    function scrollPlay(){  
+    var frameNumber  = window.pageYOffset/playbackConst;
+    vid.currentTime  = frameNumber;
+    window.requestAnimationFrame(scrollPlay);
+    }
+
+    window.requestAnimationFrame(scrollPlay);
+    
+    </script>
+
+
+
+</body>
+
+</html>
